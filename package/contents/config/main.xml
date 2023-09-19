@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name="customAppBrowser"/>
+  <group name="General">
+    <entry name="allowClipboardAccess" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="notificationsAccess" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="mediaVideoCapture" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="mediaAudioCapture" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="mediaAudioVideoCapture" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="url" type="string">
+      <!-- <default>https://kde.org</default> -->
+      <default>https://web.webex.com/</default>
+    </entry>
+    <entry name="userAgent" type="String">
+      <label>User Agent</label>
+      <default>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36</default>
+    </entry>
+    <entry name="width" type="Int">
+      <default>790</default>
+    </entry>
+    <entry name="height" type="Int">
+      <default>555</default>
+    </entry>
+    <entry name="mainIconName" type="string">
+      <default>applications-internet</default>
+    </entry>
+    <entry name="iconNewNotification" type="string">
+      <default></default>
+    </entry>
+    <entry name="debugConsole" type="Bool">
+      <default>false</default>
+    </entry>
+  </group>
+</kcfg>
+

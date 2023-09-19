@@ -1,0 +1,23 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Rgn"
+            }
+        ],
+        "Category": "Online Services",
+        "Description": "Custom App Web",
+        "Icon": "applications-internet",
+        "Id": "com.rgn.customappweb",
+        "License": "BSD 3.0",
+        "Name": "Custom App Web",
+        "ServiceTypes": [
+            "Plasma/Applet"
+        ],
+        "Version": "0.1",
+        "Website": ""
+    },
+    "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-MainScript": "ui/main.qml",
+    "X-Plasma-StandAloneApp": true
+}
