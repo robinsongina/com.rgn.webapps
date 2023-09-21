@@ -32,8 +32,8 @@ Item {
 			// 	console.log("Plasmoid hideOnWindowDeactivateChanged changed")
 			// }
 			function onExpandedChanged() {
-				if(appWebView && plasmoid.expanded) {
-					if(appWebView.LoadStatus == WebEngineView.LoadFailedStatus) appWebView.reload();
+				if(webAppWebView && plasmoid.expanded) {
+					if(webAppWebView.LoadStatus == WebEngineView.LoadFailedStatus) webAppWebView.reload();
 				}
 				// console.log("Plasmoid onExpandedChanged: "+plasmoid.expanded )
 			}
@@ -87,7 +87,7 @@ Item {
 					tooltip: i18n("Reload")
 					iconSource: "view-refresh"
 					onClicked: {
-						appWebView.reload();
+						webAppWebView.reload();
 					}
 				}
 				PlasmaComponents.ToolButton {
@@ -98,8 +98,8 @@ Item {
 					enabled:visible
 					iconSource: "debug-step-over"
 					onClicked: {
-						appWebViewInspector.visible = !appWebViewInspector.visible;
-						appWebViewInspector.enabled = visible || appWebViewInspector.visible
+						webAppWebViewInspector.visible = !webAppWebViewInspector.visible;
+						webAppWebViewInspector.enabled = visible || webAppWebViewInspector.visible
 					}
 				}
    			}
@@ -110,27 +110,33 @@ Item {
 				property: "hideOnWindowDeactivate"
 				value: !plasmoid.configuration.pin
 			}
+
+			Binding {
+				target: plasmoid
+				property: "title"
+				value: plasmoid.configuration.name != "" ? plasmoid.configuration.name : plasmoid.title
+			}
 		}
 		RowLayout {
 			Layout.fillHeight:true
 			Layout.fillWidth:true
 			
 			Components.AppEngineView {
-				id: appWebView
-				profile.storageName: "appCustom"
+				id: webAppWebView
+				profile.storageName: "webApp-" + plasmoid.configuration.name
 			}
 	
 		}
 
 		WebEngineView {
-			id: appWebViewInspector
+			id: webAppWebViewInspector
 			Layout.fillWidth: true
 			Layout.alignment: Qt.AlignBottom
 			height: parent.height / 2
 			visible: false
 			enabled: false
 			z: 100
-			inspectedView: enabled ? appWebView : null	
+			inspectedView: enabled ? webAppWebView : null	
 		}
 	}
 }

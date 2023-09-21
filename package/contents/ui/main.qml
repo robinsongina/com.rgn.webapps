@@ -14,7 +14,7 @@ Item {
 	id: root
 	property string mainIconName: plasmoid.configuration.mainIconName
 	property string iconNewNotification: plasmoid.configuration.iconNewNotification
-	property bool newMessage: false;
+	property bool newNotification: false;
 	
 	Plasmoid.compactRepresentation: CompactRepresentation {}
 	Plasmoid.fullRepresentation: FullRepresentation {}

@@ -11,15 +11,15 @@ Item {
 		PlasmaCore.IconItem {
 			Layout.fillWidth: true
 			Layout.fillHeight: true
-			source: root.newMessage && root.iconNewNotification != '' ? root.iconNewNotification : root.mainIconName
+			source: root.newNotification && root.iconNewNotification != '' ? root.iconNewNotification : root.mainIconName
 			smooth: true
 
 			MouseArea {
 				anchors.fill: parent
 				onClicked: {
 					plasmoid.expanded = !plasmoid.expanded
-					if (root.newMessage) {
-						root.newMessage = false;
+					if (root.newNotification) {
+						root.newNotification = false;
 					}
 				}
 			}

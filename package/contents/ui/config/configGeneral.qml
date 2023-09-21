@@ -9,12 +9,12 @@ import org.kde.kquickcontrolsaddons 2.0 as KQuickAddons
 Kirigami.FormLayout {
   id: page
 
-  property alias cfg_width: width.value
-  property alias cfg_height: height.value
   property alias cfg_mainIconName: mainIconName.icon.name
   property alias cfg_iconNewNotification: iconNewNotification.icon.name
   property alias cfg_url: url.text
-  // property alias cfg_userAgent: userAgent.text
+  property alias cfg_name: name.text
+  property alias cfg_showUserAgent: showUserAgent.checked
+  property alias cfg_userAgent: userAgent.text
   property alias cfg_allowClipboardAccess: allowClipboardAccess.checked
   property alias cfg_notificationsAccess: notificationsAccess.checked
   property alias cfg_mediaVideoCapture: mediaVideoCapture.checked
@@ -32,9 +32,22 @@ Kirigami.FormLayout {
     onIconNameChanged: iconObj.name = iconName    
   }
 
+  QQC2.TextField {
+    id: name
+    Kirigami.FormData.label: i18n("Name:")
+    placeholderText: "Website name"
+  }
+
+  QQC2.TextField {
+    id: url
+    Kirigami.FormData.label: i18n("Url:")
+    placeholderText: "https://www.website.com"
+  }
+
   RowLayout {
+    spacing: 5
     QQC2.Label {
-      text: i18n("Icon")
+      text: i18n("Icon:")
     }
     QQC2.Button {
       id: mainIconName
@@ -46,11 +59,8 @@ Kirigami.FormLayout {
         iconDialog.iconObj = mainIconName.icon
       }
     }
-  }
-
-  RowLayout {
     QQC2.Label {
-      text: i18n("Icon new notification")
+      text: i18n("Icon new notification:")
     }
     QQC2.Button {
       id: iconNewNotification
@@ -63,45 +73,17 @@ Kirigami.FormLayout {
       }
     }
   }
-  
-  QQC2.Slider {
-    Kirigami.FormData.label:i18n("Window Width: %1px",width.value );
-    id: width
-    from: 790
-    stepSize: 5
-    value: 790
-    to: 1920
-    live: true
-  }
 
-  QQC2.Slider {
-    Kirigami.FormData.label:i18n("Window Height: %1px",height.value );
-    id: height
-    from: 555
-    stepSize: 5
-    value: 555
-    to: 1080
-    live: true
+  QQC2.CheckBox {
+    id: showUserAgent
+    text: i18n("UserAgent")
   }
 
   QQC2.TextField {
-	  id: url
-    Kirigami.FormData.label: i18n("Url:")
-	  placeholderText: "Url"
+	  id: userAgent
+	  placeholderText: "UserAgent for browser"
+    enabled: showUserAgent.checked
   }
-
-  // QQC2.TextField {
-	//   id: userAgent
-  //   Kirigami.FormData.label: i18n("UserAgent:")
-	//   placeholderText: "UserAgent for browser"
-  // }
-
-  // QQC2.Label {
-  //  font.pixelSize: 10
-  //  font.italic: true
-  //  text:i18n("It is necessary to ignore the message Whatsapp works with Google Chrome 60+");
-  // }
-
 
 	QQC2.CheckBox {
     id: allowClipboardAccess
@@ -121,17 +103,16 @@ Kirigami.FormLayout {
 
   QQC2.CheckBox {
     id: mediaVideoCapture
-    text: i18n("Video devices, such as cameras.")
+    text: i18n("Allow Video devices, such as cameras.")
   }
 
   QQC2.CheckBox {
     id: mediaAudioCapture
-    text: i18n("Audio capture devices, such as microphones.")
+    text: i18n("Allow Audio capture devices, such as microphones.")
   }
 
   QQC2.CheckBox {
     id: mediaAudioVideoCapture
-    text: i18n("Both audio and video capture devices.")
+    text: i18n("Allow Both audio and video capture devices.")
   }
-  
 }
