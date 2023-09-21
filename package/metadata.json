@@ -6,16 +6,16 @@
             }
         ],
         "Category": "Online Services",
-        "Description": "Custom App Web",
+        "Description": "Run websites as if they were apps",
         "Icon": "applications-internet",
-        "Id": "com.rgn.customappweb",
+        "Id": "com.rgn.webapps",
         "License": "BSD 3.0",
-        "Name": "Custom App Web",
+        "Name": "Web Apps Plasmoid",
         "ServiceTypes": [
             "Plasma/Applet"
         ],
         "Version": "0.1",
-        "Website": ""
+        "Website": "https://github.com/robinsongina/com.rgn.webapps.git"
     },
     "X-Plasma-API": "declarativeappletscript",
     "X-Plasma-MainScript": "ui/main.qml",

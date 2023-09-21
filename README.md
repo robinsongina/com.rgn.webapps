@@ -1,9 +1,9 @@
-# Custom App Web plamosid
+# Web Apps plasmoid
 
 ## Installation
 ```
-git clone https://github.com/robinsongina/com.rgn.appwebbrowser.git
-plasmapkg2 --install ./com.rgn.appwebbrowser/package
+git clone https://github.com/robinsongina/com.rgn.webapps.git
+plasmapkg2 --install ./com.rgn.webapps/package
 ```
 
 ## Development
