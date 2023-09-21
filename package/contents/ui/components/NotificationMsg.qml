@@ -14,7 +14,7 @@ Component {
 		onDefaultActivated: {
 			if (!plasmoid.expanded){
 				plasmoid.expanded = !plasmoid.expanded;
-				root.newMessage = false;
+				root.newNotification = false;
 			} 
 		}
 	}
