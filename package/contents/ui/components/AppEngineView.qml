@@ -1,6 +1,6 @@
 import QtQuick 2.3
 import QtQuick.Layouts 1.0
-import QtWebEngine 1.9
+import QtWebEngine 1.10
 import org.kde.plasma.plasmoid 2.0
 
 WebEngineView {
@@ -56,6 +56,10 @@ WebEngineView {
 				})	
 			}
 		}
+	}
+
+	onFullScreenRequested: {
+		request.accept()
 	}
 
 	//This signal is emitted when the web site identified by securityOrigin requests to make use of the resource or device identified by feature.
