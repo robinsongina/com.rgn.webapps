@@ -1,6 +1,6 @@
 import QtQuick 2.3
 import QtQuick.Layouts 1.0
-import QtWebEngine 1.10
+import QtWebEngine
 import org.kde.plasma.plasmoid 2.0
 
 WebEngineView {

@@ -2,8 +2,7 @@ import QtQml 2.0
 import QtQuick 2.3
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.5 as QQC2
-import org.kde.kirigami 2.4 as Kirigami
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.kirigami as Kirigami
 import org.kde.kquickcontrolsaddons 2.0 as KQuickAddons
 
 Kirigami.FormLayout {
@@ -51,7 +50,7 @@ Kirigami.FormLayout {
     }
     QQC2.Button {
       id: mainIconName
-      icon.height: PlasmaCore.Units.iconSizes.medium
+      icon.height: Kirigami.Units.iconSizes.medium
       icon.width: icon.height
       
       onClicked: {
@@ -64,7 +63,7 @@ Kirigami.FormLayout {
     }
     QQC2.Button {
       id: iconNewNotification
-      icon.height: PlasmaCore.Units.iconSizes.medium
+      icon.height: Kirigami..Units.iconSizes.medium
       icon.width: icon.height
       
       onClicked: {

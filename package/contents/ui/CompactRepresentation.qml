@@ -1,6 +1,6 @@
 import QtQuick 2.3
 import QtQuick.Layouts 1.0
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.kirigami as Kirigami
 import org.kde.plasma.plasmoid 2.0
 
 Item {
@@ -8,7 +8,7 @@ Item {
 	RowLayout {
 		anchors.fill: parent
 	
-		PlasmaCore.IconItem {
+		Kirigami.Icon {
 			Layout.fillWidth: true
 			Layout.fillHeight: true
 			source: root.newNotification && root.iconNewNotification != '' ? root.iconNewNotification : root.mainIconName

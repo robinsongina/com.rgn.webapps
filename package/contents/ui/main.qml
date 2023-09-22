@@ -8,12 +8,12 @@ import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.0
 import org.kde.plasma.plasmoid 2.0
 
-Item {
+PlasmoidItem {
 	id: root
 	property string mainIconName: plasmoid.configuration.mainIconName
 	property string iconNewNotification: plasmoid.configuration.iconNewNotification
 	property bool newNotification: false;
 	
-	Plasmoid.compactRepresentation: CompactRepresentation {}
-	Plasmoid.fullRepresentation: FullRepresentation {}
+	compactRepresentation: CompactRepresentation {}
+	fullRepresentation: FullRepresentation {}
 }

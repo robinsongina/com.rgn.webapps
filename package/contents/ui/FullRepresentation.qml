@@ -1,19 +1,19 @@
 import QtQuick 2.3
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.0
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.kirigami as Kirigami
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.plasmoid 2.0
-import QtWebEngine 1.10
+import QtWebEngine
 
 import "components" as Components
 
 Item {
     id: fullRep
-	Layout.minimumWidth: 790 * PlasmaCore.Units.devicePixelRatio
-	Layout.minimumHeight:  555 * PlasmaCore.Units.devicePixelRatio
-	Layout.preferredWidth: plasmoid.configuration.width * PlasmaCore.Units.devicePixelRatio
-	Layout.preferredHeight: plasmoid.configuration.height * PlasmaCore.Units.devicePixelRatio
+	Layout.minimumWidth: 790 * 1
+	Layout.minimumHeight:  555 * 1
+	Layout.preferredWidth: plasmoid.configuration.width * 1
+	Layout.preferredHeight: plasmoid.configuration.height * 1
 
     
     ColumnLayout {
@@ -46,8 +46,8 @@ Item {
 				left: parent.left;
 				top: parent.top;
 			}
-			height: 24 * PlasmaCore.Units.devicePixelRatio
-			spacing: 2 * PlasmaCore.Units.devicePixelRatio
+			height: 24 * 1
+			spacing: 2 * 1
 
 			Row {
 				anchors {
@@ -56,8 +56,8 @@ Item {
 					top: parent.top;
 					bottom: parent.bottom
 				}
-				spacing: 2 * PlasmaCore.Units.devicePixelRatio
-				PlasmaCore.IconItem {
+				spacing: 2 * 1
+				Kirigami.Icon {
 					height: parent.height
 					width: height
 					source: root.mainIconName
@@ -69,10 +69,10 @@ Item {
 					right: parent.right;
 					top: parent.top;
 				}
-				spacing: 2 * PlasmaCore.Units.devicePixelRatio
-				PlasmaComponents.ToolButton {
+				spacing: 2 * 1
+				PlasmaComponents3.ToolButton {
 					id:pinButton
-					height:24 * PlasmaCore.Units.devicePixelRatio
+					height:24 * 1
 					width:height
 					checkable: true
 					tooltip: i18n("Pin window")
@@ -80,9 +80,9 @@ Item {
 					checked: plasmoid.configuration.pin
 					onCheckedChanged: plasmoid.configuration.pin = checked
 				}
-				PlasmaComponents.ToolButton {
+				PlasmaComponents3.ToolButton {
 					id: pinbutton
-					height: 24 * PlasmaCore.Units.devicePixelRatio
+					height: 24 * 1
 					width: height
 					tooltip: i18n("Reload")
 					iconSource: "view-refresh"
@@ -90,8 +90,8 @@ Item {
 						webAppWebView.reload();
 					}
 				}
-				PlasmaComponents.ToolButton {
-					height: 24 * PlasmaCore.Units.devicePixelRatio
+				PlasmaComponents3.ToolButton {
+					height: 24 * 1
 					width: height
 					tooltip: i18n("Debug console")
 					visible: Qt.application.arguments[0] == "plasmoidviewer" || plasmoid.configuration.debugConsole
